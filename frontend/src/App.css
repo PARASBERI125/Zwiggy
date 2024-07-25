@@ -1,0 +1,443 @@
+/* General Styles */
+body {
+    padding-top: 50px; /* Space for the fixed navbar */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+}
+.butt{
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+.butt1{
+    
+    display: flex;
+    margin-left: auto;
+    }
+    .butt1 h2{
+        font-weight: 1000;
+        padding: 6px;
+    }
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.navbar-brand img {
+    height: 28px;
+    width: 33px;
+    margin-bottom: 1.3px;
+}
+
+.navbar-brand h3 {
+    text-transform: uppercase;
+    font-size: larger;
+    margin: 0;
+    color: rgb(110, 74, 251);
+}
+
+.searcheng {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-top: 4px;
+    margin-right: 7px;
+}
+/* In your CSS file (e.g., styles.css) */
+.modal-backdrop {
+    background-color: transparent; /* Remove the dark background */
+  }
+  
+.searcheng input {
+    border-radius: 20px 0 0 20px;
+    border: 1px solid #ced4da;
+    padding: 6.5px 15px;
+}
+
+.searcheng button {
+    border-radius: 0 20px 20px 0;
+}
+
+
+.cartlog {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 60px;
+}
+
+.logbut{
+    padding-top: 5px;
+    height: 37px;
+    margin-top: 4px ;
+}
+
+
+
+/* Banner Section */
+.bannerh {
+    display: flex;
+    gap: 40px;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.left {
+    width: 50%;
+    padding: 20px;
+}
+
+.left h1 {
+    font-size: 2.5rem;
+    color: #444;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.left h4 {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #666;
+}
+
+.right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foodbanner {
+    width: 80%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.des{
+    color:rgb(110, 74, 251) ;
+}
+
+/* Card Section */
+.cardh {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 20px;
+    gap: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.card {
+    width: 18rem;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+.logreg{
+    display: flex;
+    align-items: center;
+    
+}
+.signup{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 3px;
+}
+.signup a{
+    color: rgb(110, 74, 251);
+    text-decoration: underline;
+
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+.registerbtn{
+    margin-top: 5px;
+}
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+.card-title1{
+    margin-right: 5px;
+    font-weight:1000 ;
+}
+.c{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-primary {
+    background-color: rgb(110, 74, 251);
+    border-color: rgb(110, 74, 251);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    border-color: #333;
+}
+/* In your CSS file (e.g., styles.css) */
+.custom-login-button {
+    @layer  btn-outline-dark;
+  }
+  
+/* Footer Section */
+.footerh {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+}
+
+.footerh p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .navbar-brand h3 {
+        font-size: 1.2rem;
+    }
+
+    .searcheng {
+        width: 250px;
+    }
+
+    .bannerh {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left h1 {
+        font-size: 2rem;
+    }
+
+    .left h4 {
+        font-size: 1rem;
+    }
+
+    .foodbanner {
+        width: 100%;
+        max-width: 300px;
+    }
+    .card {
+        width: calc(120% - 20px); /* Two cards per row */
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar{
+        padding: 0px 0px;
+    }
+    .navbar-brand {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .searcheng {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cartlog {
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .bannerh {
+        margin-top: 20px;
+    }
+
+    .left {
+        margin: 0;
+    }
+
+    .left h1 {
+        font-size: 1.8rem;
+    }
+
+    .left h4 {
+        font-size: 0.95rem;
+    }
+
+    .right {
+        margin-top: 20px;
+    }
+
+    .foodbanner {
+        width: 90%;
+        max-width: 250px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+}
+/* Media Query for Small Devices (Up to 400px) */
+@media (max-width: 400px) {
+    /* Navbar */
+    .navbar {
+        padding: 5px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navbar-brand img {
+        height: 24px;
+        width: 28px;
+    }
+
+    .navbar-brand h3 {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .searcheng {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        max-width: 100%;
+    }
+
+    .searcheng input {
+        width: calc(130% - 60px); /* Adjust width to fit alongside the button */
+        border-radius: 20px 0 0 20px;
+        padding: 4px 8px;
+        font-size: 0.85rem;
+    }
+
+    .searcheng button {
+        width: 50px; /* Fixed width for the button */
+        border-radius: 0 20px 20px 0;
+        padding: 4px 4px;
+        font-size: 0.85rem;
+    }
+
+    .cartlog {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+    .logbut{
+        height: 30px;
+        font-size:smaller;
+        margin-bottom: 10px;
+    }
+.cartlink{
+    margin-bottom: 8px;
+}
+    /* Banner Section */
+    .bannerh {
+        margin-top: 60px; /* Ensure banner is visible below the fixed navbar */
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .left h1 {
+        font-size: 1.6rem;
+    }
+
+    .left h4 {
+        font-size: 0.85rem;
+    }
+
+    .foodbanner {
+        width: 95%;
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    /* Card Section */
+    .card {
+        width: 95%;
+        max-width: 280px;
+        margin: 10px auto;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        padding: 10px;
+    }
+
+    /* Footer Section */
+    .footerh {
+        padding: 10px;
+    }
+
+    .footerh p {
+        font-size: 0.8rem;
+    }
+}
+
+
