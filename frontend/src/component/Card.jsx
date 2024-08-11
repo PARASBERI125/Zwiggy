@@ -1,59 +1,36 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Custombutton from "./Custombutton"; // Importing the Custombutton component
+import { EntireContext } from "./Entirecontext";
 
-function Card({ cardData }) {
-  // Initialize the counts state, setting each count to 0 initially
-  const [counts, setCounts] = useState(cardData.map(() => 0));
-
-  // Function to handle increment of count for a specific card
-  const handleIncrement = (index) => {
-    setCounts((prevCounts) => {
-      const newCounts = [...prevCounts]; // Copying the previous counts
-      newCounts[index] = newCounts[index] + 1; // Increment the count at the specified index
-      return newCounts; // Returning the new counts array
-    });
-  };
-
-  // Function to handle decrement of count for a specific card
-  const handleDecrement = (index) => {
-    setCounts((prevCounts) => {
-      const newCounts = [...prevCounts]; // Copying the previous counts
-      newCounts[index] = Math.max(0, newCounts[index] - 1); // Decrement the count, ensuring it doesn't go below 0
-      return newCounts; // Returning the new counts array
-    });
-  };
-
+function Card() {
+  const { dish, searchTerm } = useContext(EntireContext);
+  const filteredDishes = dish.filter((cardd) =>
+    cardd.title.toLowerCase().includes(searchTerm)
+  );
+  const isFiltered = searchTerm.trim().length > 0;
   return (
     <div className="container cardh">
       <div className="row">
-        {/* Map over each item in cardData */}
-        {cardData.map((cardd, index) => (
+        {filteredDishes.map((cardd) => (
           <div
-            className="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" // Grid column classes
-            key={index} // Key for each card element
+            className={`col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4 ${
+              isFiltered ? "filtered-card" : ""
+            }`}
+            key={cardd._id}
           >
             <div className="card h-100">
               <img
-                src={cardd.imageSrc} // Image source from cardData
-                className="card-img-top img-fluid" // Image styling classes
-                alt={cardd.title} // Alternative text for image
+                src={cardd.imageSrc}
+                className="card-img-top img-fluid"
+                alt={cardd.title}
               />
               <div className="card-body d-flex flex-column">
-                {" "}
-                {/* Flex column to position elements */}
                 <div className="c">
-                  <h5 className="card-title">{cardd.title}</h5>{" "}
-                  {/* Card title */}
-                  <h4 className="card-title1">₹{cardd.price}</h4>{" "}
-                  {/* Fixed price */}
+                  <h5 className="card-title">{cardd.title}</h5>
+                  <h4 className="card-title1">₹{cardd.price}</h4>
                 </div>
                 <a className="mt-auto">
-                  {/* Render Custombutton and pass count and handlers */}
-                  <Custombutton
-                    count={counts[index]} // Current count for the card
-                    increment={() => handleIncrement(index)} // Increment handler
-                    decrement={() => handleDecrement(index)} // Decrement handler
-                  />
+                  <Custombutton item={cardd} />
                 </a>
               </div>
             </div>

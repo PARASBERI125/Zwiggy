@@ -7,7 +7,7 @@ function Banner() {
       <div className="row align-items-center">
         <div className="col-md-6 left">
           <h1>
-            Welcome to <span className="des">ZWIGGY</span>, where freshness
+            Welcome to <span className="des">SURUCHI</span>, where freshness
             meets flavor. Discover your next healthy meal today!
           </h1>
           <h4>
@@ -15,7 +15,7 @@ function Banner() {
             experience. Our app connects you with top restaurants and exclusive
             dishes to satisfy every craving. Enjoy exclusive deals, secure
             payments, and personalized recommendations. Dive into deliciousness
-            with ZWIGGY today!
+            with SURUCHI today!
           </h4>
         </div>
 

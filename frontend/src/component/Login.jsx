@@ -1,20 +1,39 @@
 // src/components/Login.js
 
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
-
+import toast from "react-hot-toast";
+import { EntireContext } from "./Entirecontext";
 function Login() {
-  const navigate = useNavigate();
+  const { setOpenModal, sett } = useContext(EntireContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const onSubmit1 = (data) => {
-    console.log(data);
-    navigate("/");
+  const onSubmit1 = async (data) => {
+    const userinfo = {
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:4001/user/login", userinfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success("Login successful");
+          setOpenModal(false);
+          sett("Logout");
+        }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+      })
+      .catch((err) => {
+        if (err.response) {
+          toast.error(err.response.data.message);
+        }
+      });
   };
 
   return (

@@ -6,20 +6,29 @@ body {
     color: #333;
     margin: 0;
 }
-.butt{
-    display: flex;
-    gap:5px;
-    align-items: center;
+.filtered-card {
+    width: 70%; /* Adjust as needed to prevent squeezing */
+    margin: 10px;
 }
+
 .butt1{
     
-    display: flex;
-    margin-left: auto;
+    
+    justify-content: center;
+    align-items: center;
+
     }
+   .butt1{
+    width: 200px;
+    height: 45px;
+   }
+    
     .butt1 h2{
-        font-weight: 1000;
-        padding: 6px;
+        font-weight: 800;
+        font-size:21px;
     }
+   
+
 /* Navbar Styles */
 .navbar {
     background-color: #ffffff;
@@ -36,19 +45,16 @@ body {
     margin-left: 15px;
 }
 
-.navbar-brand img {
-    height: 28px;
-    width: 33px;
-    margin-bottom: 1.3px;
-}
+
 
 .navbar-brand h3 {
     text-transform: uppercase;
     font-size: larger;
+    font-weight: 800;
     margin: 0;
-    color: rgb(110, 74, 251);
+    color: rgb(77, 183, 69);
 }
-
+/*    rgb(110,74,251)   */
 .searcheng {
     display: flex;
     align-items: center;
@@ -64,17 +70,21 @@ body {
   }
   
 .searcheng input {
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px;
     border: 1px solid #ced4da;
     padding: 6.5px 15px;
 }
-
-.searcheng button {
-    border-radius: 0 20px 20px 0;
+.searcheng input:focus {
+    border-color: rgb(77, 183, 69) ;
+    box-shadow : 0 0 0 0.25rem rgba(77, 183, 69,0.25); 
+    outline: none; /* Remove default outline */
 }
 
 
+
+
 .cartlog {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -135,7 +145,7 @@ body {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 }
 .des{
-    color:rgb(110, 74, 251) ;
+    color:rgb(77, 183, 69) ;
 }
 
 /* Card Section */
@@ -160,7 +170,29 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
 }
+.cartlink{
+    display: flex;
+}
 
+
+
+
+
+
+
+
+
+
+
+.countshow{
+    
+    
+   height: 5px;
+   width: 5px;
+    background-color: red;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
@@ -177,7 +209,7 @@ body {
     gap: 3px;
 }
 .signup a{
-    color: rgb(110, 74, 251);
+    color: rgb(77, 183, 69);
     text-decoration: underline;
 
 }
@@ -201,7 +233,7 @@ body {
     margin-bottom: 10px;
 }
 .card-title1{
-    margin-right: 5px;
+    margin-right: 11px;
     font-weight:1000 ;
 }
 .c{
@@ -209,8 +241,8 @@ body {
     justify-content: space-between;
 }
 .btn-primary {
-    background-color: rgb(110, 74, 251);
-    border-color: rgb(110, 74, 251);
+    background-color: rgb(77, 183, 69);
+    border-color: rgb(77, 183, 69);
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -336,22 +368,29 @@ body {
         justify-content: space-between;
         align-items: center;
     }
-
+    .countshow{
+    
+    
+        height: 5px;
+        width: 5px;
+         background-color: red;
+         border-radius: 50%;
+         margin-bottom: 10px;
+     }
     .navbar-brand {
         flex: 1;
         display: flex;
         align-items: center;
-        gap: 10px;
+        
     }
 
-    .navbar-brand img {
-        height: 24px;
-        width: 28px;
-    }
+  
 
     .navbar-brand h3 {
         font-size: 0.9rem;
         margin: 0;
+        
+        
     }
 
     .searcheng {
@@ -366,14 +405,14 @@ body {
         width: calc(130% - 60px); /* Adjust width to fit alongside the button */
         border-radius: 20px 0 0 20px;
         padding: 4px 8px;
-        font-size: 0.85rem;
+        font-size: 0.80rem;
     }
 
     .searcheng button {
-        width: 50px; /* Fixed width for the button */
+        width: 40px; /* Fixed width for the button */
         border-radius: 0 20px 20px 0;
         padding: 4px 4px;
-        font-size: 0.85rem;
+        font-size: 0.70rem;
     }
 
     .cartlog {
@@ -386,7 +425,17 @@ body {
         font-size:smaller;
         margin-bottom: 10px;
     }
+    .custom-login-button{
+        height: 27px;
+        width: 68px;
+        font-size: 14px;
+        font-weight: 900 ;
+     margin-bottom: 5px;
+     margin-left: 2px;
+        
+    }
 .cartlink{
+    width: 20px;
     margin-bottom: 8px;
 }
     /* Banner Section */

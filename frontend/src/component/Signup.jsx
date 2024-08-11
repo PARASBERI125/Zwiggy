@@ -1,6 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 function Signup() {
   const navigate = useNavigate();
   const {
@@ -9,9 +11,27 @@ function Signup() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit1 = (data) => {
-    console.log(data);
-    navigate("/");
+  const onSubmit1 = async (data) => {
+    const userinfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:4001/user/signup", userinfo)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data) {
+          toast.success("Signup successful");
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        if (err.response) {
+          toast.error(err.response.data.message);
+          navigate("/");
+        }
+      });
   };
 
   return (
@@ -45,7 +65,7 @@ function Signup() {
       >
         <form onSubmit={handleSubmit(onSubmit1)}>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="fullname" className="form-label">
               Name
             </label>
             <input
@@ -53,9 +73,9 @@ function Signup() {
               className="form-control"
               id="name"
               placeholder="Enter your full name"
-              {...register("username", { required: true })}
+              {...register("fullname", { required: true })}
             />
-            {errors.email && (
+            {errors.fullname && (
               <span style={{ color: "red" }}>This field is required</span>
             )}
           </div>
@@ -86,7 +106,7 @@ function Signup() {
               placeholder="Enter your password"
               {...register("password", { required: true })}
             />
-            {errors.email && (
+            {errors.password && (
               <span style={{ color: "red" }}>This field is required</span>
             )}
           </div>

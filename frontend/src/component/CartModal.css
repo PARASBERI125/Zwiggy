@@ -1,0 +1,75 @@
+/* CartModal.css */
+.inc{
+  height:40px ;
+  width:40px ;
+  border-radius: 50%;
+  color: white;
+}
+.dec{
+  height:40px ;
+  width: 40px;
+  border-radius: 50%;
+  color:white;
+}
+.cart-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.cart-modal-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.item-quantity {
+  
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  margin-top: 5px;
+
+}
+
+.item-quantity button {
+  font-size: large;
+  margin: 0 5px;
+}
+
+.empty-cart {
+  text-align: center;
+}
+
+.cart-total {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.cart-modal-header h3{
+  font-weight: 800;
+  text-decoration: underline;
+  margin-left: 10px;
+}

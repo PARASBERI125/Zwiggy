@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import grocerystore from "../grocery-store.png"; // Ensure this path is correct
+import React, { useContext } from "react";
+import grocerystore from "../grocery-store.png";
 import Login from "./Login";
+import CartModal from "./CartModal";
+import { EntireContext } from "./Entirecontext";
 
 function Navbar() {
-  const [openModal, setOpenModal] = useState(false);
-
-  const handleOutsideClick = (event) => {
-    // Close the modal if clicked outside of it
-    if (event.target.classList.contains("modal-overlay")) {
-      setOpenModal(false);
-    }
-  };
+  const {
+    setSearchTerm,
+    cartItems,
+    openModal,
+    isadded,
+    t,
+    handleOutsideClick,
+    handleCartLinkClick,
+    handleButtonClick,
+    cartModalOpen,
+  } = useContext(EntireContext);
 
   return (
     <div className="super">
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand bhak" href="/">
-            <img
-              src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
-              className="d-inline-block align-text-top logo"
-              alt="Zwiggy Logo"
-            />
-            <h3>zwiggy</h3>
+          <a className="navbar-brand " href="/">
+            <h3>suruchi</h3>
           </a>
 
           <form className="d-flex ms-auto searcheng" role="search">
@@ -31,28 +31,40 @@ function Navbar() {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
             />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
           </form>
 
-          <div className="cartlog ms-3">
-            <a className="cartlink" href="#">
+          <div className="cartlog ms-3" style={{ position: "relative" }}>
+            <a
+              className="cartlink"
+              href="#"
+              onClick={handleCartLinkClick}
+              style={{
+                textDecoration: "none",
+                cursor: "pointer",
+                display: "flex",
+                alignItems: "center",
+                position: "relative",
+              }}
+            >
               <img src={grocerystore} width={23} alt="Cart" />
+              {isadded && cartItems.length > 0 && (
+                <div className="countshow"></div>
+              )}
             </a>
+            {cartModalOpen && <CartModal />}
             <button
               type="button"
-              className="btn btn-outline-dark custom-login-button"
-              onClick={() => setOpenModal(!openModal)}
+              className="btn btn-primary custom-login-button"
+              onClick={handleButtonClick}
             >
-              Login
+              <h2>{t}</h2>
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Modal Container */}
       {openModal && (
         <div
           className="modal-overlay"
