@@ -4,6 +4,7 @@ import "dotenv/config";
 import dishRoute from "./Route/dish.route.js";
 import cors from "cors";
 import userRoute from "./Route/user.route.js";
+import path from "path";
 const app = express();
 //middleware
 app.use(cors());
@@ -23,6 +24,13 @@ try {
 //defining routes
 app.use("/dish", dishRoute);
 app.use("/user", userRoute);
+if (process.env.NODE_ENV === "production") {
+  const dirpath = path.resolve();
+  app.use(express.static("frontend/dist"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(dirpath, "frontend", "dist", "index.html"));
+  });
+}
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
