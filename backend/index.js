@@ -12,7 +12,6 @@ const __dirname = path.resolve();
 app.use(cors());
 app.use(express.json());
 
-const PORT = process.env.PORT || 4000;
 const URL = process.env.MongoDBURL;
 
 // Connect to MongoDB
@@ -36,6 +35,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
+app.listen(3000, () => {
+  console.log(`App listening on port 3000`);
 });
