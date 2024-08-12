@@ -13,7 +13,7 @@ export const Contextprovider = ({ children }) => {
   useEffect(() => {
     const getdish = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/dish");
+        const res = await axios.get("/dish");
         console.log(res.data);
         setdish(res.data);
       } catch (error) {
