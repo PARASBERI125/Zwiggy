@@ -5,11 +5,9 @@ import "dotenv/config";
 import dishRoute from "./Route/dish.route.js";
 import cors from "cors";
 import userRoute from "./Route/user.route.js";
-import { fileURLToPath } from "url";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const app = express();
 
+const app = express();
+const __dirname = path.resolve();
 // Middleware
 app.use(cors());
 app.use(express.json());
@@ -32,12 +30,10 @@ try {
 app.use("/dish", dishRoute);
 app.use("/user", userRoute);
 
-// Serve the React frontend
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
-// The catch-all handler: for any request that doesn't match one above, send back React's index.html file.
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
 
 app.listen(PORT, () => {
