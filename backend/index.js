@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 
 const URL = process.env.MongoDBURL;
-
+const PORT = process.env.PORT;
 // Connect to MongoDB
 try {
   mongoose.connect(URL, {
@@ -35,6 +35,6 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log(`App listening on port 3000`);
 });
