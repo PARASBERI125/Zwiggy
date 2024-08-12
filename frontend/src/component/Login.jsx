@@ -19,7 +19,7 @@ function Login() {
       password: data.password,
     };
     await axios
-      .post("https://suruchi-backend.onrender.com/user/login", userinfo)
+      .post("/user/login", userinfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

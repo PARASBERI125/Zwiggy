@@ -13,9 +13,7 @@ export const Contextprovider = ({ children }) => {
   useEffect(() => {
     const getdish = async () => {
       try {
-        const res = await axios.get(
-          "https://suruchi-backend.onrender.com/dish"
-        );
+        const res = await axios.get("/dish");
         console.log(res.data);
         setdish(res.data);
       } catch (error) {

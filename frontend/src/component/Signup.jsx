@@ -18,7 +18,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post("https://suruchi-backend.onrender.com/user/signup", userinfo)
+      .post("/user/signup", userinfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
