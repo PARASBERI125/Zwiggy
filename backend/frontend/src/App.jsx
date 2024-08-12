@@ -9,8 +9,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/signup" element={<Signup></Signup>} />
+        <Route
+          path="https://suruchi-backend.onrender.com/"
+          element={<Home />}
+        />
+        <Route
+          path="https://suruchi-backend.onrender.com/signup"
+          element={<Signup></Signup>}
+        />
       </Routes>
       <Toaster />
     </>
