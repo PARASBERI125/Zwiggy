@@ -28,7 +28,7 @@ try {
 // Define API routes
 app.use("/dish", dishRoute);
 app.use("/user", userRoute);
-
+app.use("/images", express.static(path.join(__dirname, "../frontend/images")));
 app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
 app.get("*", (req, res) => {
